@@ -1,0 +1,13 @@
+C:\Users\m_finoti\source\repos\FinancialControl\FinancialControl.DATA\bin\Debug\net8.0\FinancialControl.DATA.deps.json
+C:\Users\m_finoti\source\repos\FinancialControl\FinancialControl.DATA\bin\Debug\net8.0\FinancialControl.DATA.dll
+C:\Users\m_finoti\source\repos\FinancialControl\FinancialControl.DATA\bin\Debug\net8.0\FinancialControl.DATA.pdb
+C:\Users\m_finoti\source\repos\FinancialControl\FinancialControl.DATA\obj\Debug\net8.0\FinancialControl.DATA.csproj.AssemblyReference.cache
+C:\Users\m_finoti\source\repos\FinancialControl\FinancialControl.DATA\obj\Debug\net8.0\FinancialControl.DATA.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\m_finoti\source\repos\FinancialControl\FinancialControl.DATA\obj\Debug\net8.0\FinancialControl.DATA.AssemblyInfoInputs.cache
+C:\Users\m_finoti\source\repos\FinancialControl\FinancialControl.DATA\obj\Debug\net8.0\FinancialControl.DATA.AssemblyInfo.cs
+C:\Users\m_finoti\source\repos\FinancialControl\FinancialControl.DATA\obj\Debug\net8.0\FinancialControl.DATA.csproj.CoreCompileInputs.cache
+C:\Users\m_finoti\source\repos\FinancialControl\FinancialControl.DATA\obj\Debug\net8.0\FinancialControl.DATA.sourcelink.json
+C:\Users\m_finoti\source\repos\FinancialControl\FinancialControl.DATA\obj\Debug\net8.0\FinancialControl.DATA.dll
+C:\Users\m_finoti\source\repos\FinancialControl\FinancialControl.DATA\obj\Debug\net8.0\refint\FinancialControl.DATA.dll
+C:\Users\m_finoti\source\repos\FinancialControl\FinancialControl.DATA\obj\Debug\net8.0\FinancialControl.DATA.pdb
+C:\Users\m_finoti\source\repos\FinancialControl\FinancialControl.DATA\obj\Debug\net8.0\ref\FinancialControl.DATA.dll

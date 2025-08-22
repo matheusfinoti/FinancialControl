@@ -11,3 +11,5 @@ C:\Users\m_finoti\source\repos\FinancialControl\FinancialControl.DATA\obj\Debug\
 C:\Users\m_finoti\source\repos\FinancialControl\FinancialControl.DATA\obj\Debug\net8.0\refint\FinancialControl.DATA.dll
 C:\Users\m_finoti\source\repos\FinancialControl\FinancialControl.DATA\obj\Debug\net8.0\FinancialControl.DATA.pdb
 C:\Users\m_finoti\source\repos\FinancialControl\FinancialControl.DATA\obj\Debug\net8.0\ref\FinancialControl.DATA.dll
+C:\Users\m_finoti\source\repos\FinancialControl\FinancialControl.DATA\bin\Debug\net8.0\FinancialControl.DATA.runtimeconfig.json
+C:\Users\m_finoti\source\repos\FinancialControl\FinancialControl.DATA\obj\Debug\net8.0\FinancialControl.DATA.genruntimeconfig.cache

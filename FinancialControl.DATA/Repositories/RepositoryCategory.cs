@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FinancialControl.DATA.Repositories
 {
-    internal class RepositoryCategory : RepositoryBase<Category>, IRepositoryCategory
+    public class RepositoryCategory : RepositoryBase<Category>, IRepositoryCategory
     {
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FinancialControl.DATA.Repositories
 {
-    internal class RepositoryBase<T> : IRepositoryModel<T>, IDisposable where T : class
+    public class RepositoryBase<T> : IRepositoryModel<T>, IDisposable where T : class
     {
         protected FinancialControlContext _Context;
         public bool _SaveChanges = true;

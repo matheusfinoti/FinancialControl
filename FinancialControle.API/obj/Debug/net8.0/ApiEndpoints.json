@@ -85,14 +85,14 @@
         "IsRequired": true
       },
       {
-        "Name": "category",
-        "Type": "FinancialControl.DATA.Models.Category",
+        "Name": "categoryDto",
+        "Type": "FinancialControle.API.DTOs.CategoryDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "FinancialControl.DATA.Models.Category",
+        "Type": "FinancialControle.API.DTOs.CategoryDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",

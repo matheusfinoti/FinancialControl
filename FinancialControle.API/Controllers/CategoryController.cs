@@ -44,10 +44,21 @@ namespace FinancialControle.API.Controllers
         }
 
         [HttpPut("{id}")]
-        public ActionResult<Category> UpdateCategory(int id, [FromBody] Category category)
+        public ActionResult<CategoryDTO> UpdateCategory(int id, CategoryDTO categoryDto)
         {
-            oCategoryService.UpdateCategory(category);
-            return Ok(category);
+            if (id != categoryDto.Id)
+                return BadRequest("O ID da URL e do corpo da requisição não correspondem.");
+
+            var existingCategory = oCategoryService.GetCategory(id);
+
+            if (existingCategory == null)
+                return NotFound("Categoria não encontrada.");
+
+            existingCategory.CategoryName = categoryDto.CategoryName;
+
+            oCategoryService.UpdateCategory(existingCategory);
+
+            return Ok(categoryDto);
         }
 
         [HttpDelete("{id}")]

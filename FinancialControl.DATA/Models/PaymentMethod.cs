@@ -2,14 +2,25 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 namespace FinancialControl.DATA.Models;
 
+[Table("PaymentMethod")]
 public partial class PaymentMethod
 {
+    [Key]
+    [Column("id")]
     public int Id { get; set; }
 
+    [Required]
+    [Column("paymentMethod")]
+    [StringLength(50)]
+    [Unicode(false)]
     public string PaymentMethod1 { get; set; }
 
+    [InverseProperty("TransactionIdPaymentMethodNavigation")]
     public virtual ICollection<Transaction> Transactions { get; set; } = new List<Transaction>();
 }

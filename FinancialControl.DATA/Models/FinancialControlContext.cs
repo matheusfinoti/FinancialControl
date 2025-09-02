@@ -8,11 +8,6 @@ namespace FinancialControl.DATA.Models;
 
 public partial class FinancialControlContext : DbContext
 {
-    public FinancialControlContext()
-    {
-        
-    }
-
     public FinancialControlContext(DbContextOptions<FinancialControlContext> options)
         : base(options)
     {
@@ -28,90 +23,20 @@ public partial class FinancialControlContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Category>(entity =>
-        {
-            entity.ToTable("Category");
-
-            entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.CategoryName)
-                .IsRequired()
-                .HasMaxLength(50)
-                .IsUnicode(false)
-                .HasColumnName("categoryName");
-        });
-
-        modelBuilder.Entity<PaymentMethod>(entity =>
-        {
-            entity.ToTable("PaymentMethod");
-
-            entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.PaymentMethod1)
-                .IsRequired()
-                .HasMaxLength(50)
-                .IsUnicode(false)
-                .HasColumnName("paymentMethod");
-        });
-
         modelBuilder.Entity<Transaction>(entity =>
         {
-            entity.ToTable("Transaction");
-
-            entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.TransactionDate)
-                .HasColumnType("datetime")
-                .HasColumnName("transactionDate");
-            entity.Property(e => e.TransactionDescription)
-                .IsRequired()
-                .HasMaxLength(50)
-                .IsUnicode(false)
-                .HasColumnName("transactionDescription");
-            entity.Property(e => e.TransactionIdCategory).HasColumnName("transactionIdCategory");
-            entity.Property(e => e.TransactionIdPaymentMethod).HasColumnName("transactionIdPaymentMethod");
-            entity.Property(e => e.TransactionValue)
-                .HasColumnType("decimal(18, 2)")
-                .HasColumnName("transactionValue");
-
             entity.HasOne(d => d.TransactionIdCategoryNavigation).WithMany(p => p.Transactions)
-                .HasForeignKey(d => d.TransactionIdCategory)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Transaction_Category");
 
             entity.HasOne(d => d.TransactionIdPaymentMethodNavigation).WithMany(p => p.Transactions)
-                .HasForeignKey(d => d.TransactionIdPaymentMethod)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Transaction_PaymentMethod");
         });
 
         modelBuilder.Entity<VwTransactionDetail>(entity =>
         {
-            entity
-                .HasNoKey()
-                .ToView("VwTransactionDetails");
-
-            entity.Property(e => e.CategoryName)
-                .IsRequired()
-                .HasMaxLength(50)
-                .IsUnicode(false)
-                .HasColumnName("categoryName");
-            entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.PaymentMethod)
-                .IsRequired()
-                .HasMaxLength(50)
-                .IsUnicode(false)
-                .HasColumnName("paymentMethod");
-            entity.Property(e => e.TransactionDate)
-                .HasColumnType("datetime")
-                .HasColumnName("transactionDate");
-            entity.Property(e => e.TransactionDescription)
-                .IsRequired()
-                .HasMaxLength(50)
-                .IsUnicode(false)
-                .HasColumnName("transactionDescription");
-            entity.Property(e => e.TransactionIdCategory).HasColumnName("transactionIdCategory");
-            entity.Property(e => e.TransactionIdPaymentMethod).HasColumnName("transactionIdPaymentMethod");
-            entity.Property(e => e.TransactionValue)
-                .HasColumnType("decimal(18, 2)")
-                .HasColumnName("transactionValue");
+            entity.ToView("VwTransactionDetails");
         });
 
         OnModelCreatingPartial(modelBuilder);

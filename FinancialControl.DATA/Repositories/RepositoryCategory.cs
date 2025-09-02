@@ -10,5 +10,9 @@ namespace FinancialControl.DATA.Repositories
 {
     public class RepositoryCategory : RepositoryBase<Category>, IRepositoryCategory
     {
+        public RepositoryCategory(FinancialControlContext context) :base (context)
+        {
+            
+        }
     }
 }

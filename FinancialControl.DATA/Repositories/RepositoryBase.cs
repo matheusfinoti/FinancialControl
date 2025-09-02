@@ -10,13 +10,13 @@ namespace FinancialControl.DATA.Repositories
 {
     public class RepositoryBase<T> : IRepositoryModel<T>, IDisposable where T : class
     {
-        protected FinancialControlContext _Context;
+        protected readonly FinancialControlContext _Context;
         public bool _SaveChanges = true;
 
-        public RepositoryBase(bool saveChanges = true)
+        public RepositoryBase(FinancialControlContext context, bool saveChanges = true)
         {
             _SaveChanges = saveChanges;
-            _Context = new FinancialControlContext();
+            _Context = context;
         }
         public T Alterar(T objeto)
         {

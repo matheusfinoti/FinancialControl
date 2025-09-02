@@ -2,24 +2,42 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 namespace FinancialControl.DATA.Models;
 
+[Table("Transaction")]
 public partial class Transaction
 {
+    [Key]
+    [Column("id")]
     public int Id { get; set; }
 
+    [Column("transactionDate", TypeName = "datetime")]
     public DateTime TransactionDate { get; set; }
 
+    [Column("transactionValue", TypeName = "decimal(18, 2)")]
     public decimal TransactionValue { get; set; }
 
+    [Required]
+    [Column("transactionDescription")]
+    [StringLength(50)]
+    [Unicode(false)]
     public string TransactionDescription { get; set; }
 
+    [Column("transactionIdPaymentMethod")]
     public int TransactionIdPaymentMethod { get; set; }
 
+    [Column("transactionIdCategory")]
     public int TransactionIdCategory { get; set; }
 
+    [ForeignKey("TransactionIdCategory")]
+    [InverseProperty("Transactions")]
     public virtual Category TransactionIdCategoryNavigation { get; set; }
 
+    [ForeignKey("TransactionIdPaymentMethod")]
+    [InverseProperty("Transactions")]
     public virtual PaymentMethod TransactionIdPaymentMethodNavigation { get; set; }
 }

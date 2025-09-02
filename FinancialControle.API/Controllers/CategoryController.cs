@@ -17,38 +17,38 @@ namespace FinancialControle.API.Controllers
             oCategoryService = categoryService;
         }
 
-            [HttpPost]
-            public ActionResult<Category> CreateCategory([FromBody] Category category)
-            {
-                oCategoryService.oRepositoryCategory.Incluir(category);
-                return Ok();
-            }
+        [HttpPost]
+        public ActionResult<Category> CreateCategory([FromBody] Category category)
+        {
+            oCategoryService.CreateCategory(category);
+            return Ok();
+        }
 
-            [HttpGet]
-            public ActionResult<IEnumerable<Category>> GetCategories()
-            {
-                List<Category> listCategory = oCategoryService.oRepositoryCategory.SelecionarTodos();
-                return Ok(listCategory);
-            }
+        [HttpGet]
+        public ActionResult<IEnumerable<Category>> GetCategories()
+        {
+            List<Category> listCategory = oCategoryService.GetCategories();
+            return Ok(listCategory);
+        }
 
-            [HttpGet("{id}")]
-            public ActionResult<Category> GetCategory(int id)
-            {
-                Category category = oCategoryService.oRepositoryCategory.SelecionarPk(id);
-                return Ok(category);
-            }
+        [HttpGet("{id}")]
+        public ActionResult<Category> GetCategory(int id)
+        {
+            Category category = oCategoryService.GetCategory(id);
+            return Ok(category);
+        }
 
         [HttpPut("{id}")]
         public ActionResult<Category> UpdateCategory(int id, [FromBody] Category category)
         {
-            oCategoryService.oRepositoryCategory.Alterar(category);
+            oCategoryService.UpdateCategory(category);
             return Ok(category);
         }
 
         [HttpDelete("{id}")]
         public ActionResult DeleteCategory(int id)
         {
-            oCategoryService.oRepositoryCategory.Excluir(id);
+            oCategoryService.DeleteCategory(id);
             return Ok();
         }
     }

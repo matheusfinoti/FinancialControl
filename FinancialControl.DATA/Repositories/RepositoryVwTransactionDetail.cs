@@ -10,5 +10,9 @@ namespace FinancialControl.DATA.Repositories
 {
     internal class RepositoryVwTransactionDetail : RepositoryBase<VwTransactionDetail>, IRepositoryVwTransactionDetail
     {
+        public RepositoryVwTransactionDetail(FinancialControlContext context) : base(context)
+        {
+            
+        }
     }
 }

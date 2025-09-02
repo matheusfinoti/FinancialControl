@@ -1,7 +1,7 @@
 using FinancialControl.DATA.Models;
+using FinancialControl.DATA.Repositories;
 using FinancialControl.DATA.Services;
 using Microsoft.EntityFrameworkCore;
-
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +18,7 @@ Console.WriteLine(connectionString);
 builder.Services.AddDbContext<FinancialControlContext>(options =>
     options.UseSqlServer(connectionString));
 
+builder.Services.AddScoped<RepositoryCategory>();
 builder.Services.AddScoped<CategoryService>();
 
 builder.Services.AddControllers();

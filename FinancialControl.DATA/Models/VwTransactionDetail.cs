@@ -2,24 +2,45 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 namespace FinancialControl.DATA.Models;
 
+[Keyless]
 public partial class VwTransactionDetail
 {
+    [Required]
+    [Column("categoryName")]
+    [StringLength(50)]
+    [Unicode(false)]
     public string CategoryName { get; set; }
 
+    [Required]
+    [Column("paymentMethod")]
+    [StringLength(50)]
+    [Unicode(false)]
     public string PaymentMethod { get; set; }
 
+    [Column("id")]
     public int Id { get; set; }
 
+    [Column("transactionDate", TypeName = "datetime")]
     public DateTime TransactionDate { get; set; }
 
+    [Required]
+    [Column("transactionDescription")]
+    [StringLength(50)]
+    [Unicode(false)]
     public string TransactionDescription { get; set; }
 
+    [Column("transactionIdCategory")]
     public int TransactionIdCategory { get; set; }
 
+    [Column("transactionIdPaymentMethod")]
     public int TransactionIdPaymentMethod { get; set; }
 
+    [Column("transactionValue", TypeName = "decimal(18, 2)")]
     public decimal TransactionValue { get; set; }
 }

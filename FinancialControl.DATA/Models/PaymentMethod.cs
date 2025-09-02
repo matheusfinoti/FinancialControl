@@ -19,7 +19,7 @@ public partial class PaymentMethod
     [Column("paymentMethod")]
     [StringLength(50)]
     [Unicode(false)]
-    public string PaymentMethod1 { get; set; }
+    public string PaymentMethodl { get; set; }
 
     [InverseProperty("TransactionIdPaymentMethodNavigation")]
     public virtual ICollection<Transaction> Transactions { get; set; } = new List<Transaction>();

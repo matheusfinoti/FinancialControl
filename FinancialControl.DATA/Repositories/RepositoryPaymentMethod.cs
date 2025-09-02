@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FinancialControl.DATA.Repositories
 {
-    internal class RepositoryPaymentMethod : RepositoryBase<PaymentMethod>, IRepositoryPaymentMethod
+    public class RepositoryPaymentMethod : RepositoryBase<PaymentMethod>, IRepositoryPaymentMethod
     {
         public RepositoryPaymentMethod(FinancialControlContext context) :base(context)
         {

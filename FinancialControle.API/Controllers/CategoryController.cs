@@ -1,6 +1,6 @@
 ﻿using FinancialControl.DATA.Models;
 using FinancialControl.DATA.Services;
-
+using FinancialControle.API.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,8 +18,13 @@ namespace FinancialControle.API.Controllers
         }
 
         [HttpPost]
-        public ActionResult<Category> CreateCategory([FromBody] Category category)
+        public ActionResult<Category> CreateCategory([FromBody] CategoryDTO categoryDTO)
         {
+            Category category = new Category
+            {
+                CategoryName = categoryDTO.CategoryName
+            };
+            
             oCategoryService.CreateCategory(category);
             return Ok();
         }

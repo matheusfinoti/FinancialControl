@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 namespace FinancialControl.DATA.Models;
 
 [Keyless]
-public partial class VwTransactionDetail
+public partial class VwTransactionDetails
 {
     [Required]
     [Column("categoryName")]
@@ -23,6 +23,7 @@ public partial class VwTransactionDetail
     [Unicode(false)]
     public string PaymentMethod { get; set; }
 
+    [Key]
     [Column("id")]
     public int Id { get; set; }
 

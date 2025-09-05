@@ -25,21 +25,21 @@ namespace FinancialControle.API.Controllers
                 PaymentMethodl = paymentMethodDTO.PaymentMethodl
             };
 
-            oPaymentMethodService.CreatePaymentMethod(paymentMethod);
+            oPaymentMethodService.Create(paymentMethod);
             return Ok();
         }
 
         [HttpGet]
         public ActionResult<IEnumerable<PaymentMethod>> GetPaymentMethod()
         {
-            List<PaymentMethod> listCategory = oPaymentMethodService.GetPaymentMethods();
+            List<PaymentMethod> listCategory = oPaymentMethodService.GetAll();
             return Ok(listCategory);
         }
 
         [HttpGet("{id}")]
         public ActionResult<PaymentMethod> GetPaymentMethod(int id)
         {
-            PaymentMethod paymentMethod = oPaymentMethodService.GetPaymentMethod(id);
+            PaymentMethod paymentMethod = oPaymentMethodService.Get(id);
             return Ok(paymentMethod);
         }
 
@@ -49,14 +49,14 @@ namespace FinancialControle.API.Controllers
             if (id != paymentMethodDTO.Id)
                 return BadRequest("O ID da URL e do corpo da requisição não correspondem.");
 
-            var existingCategory = oPaymentMethodService.GetPaymentMethod(id);
+            var existingCategory = oPaymentMethodService.Get(id);
 
             if (existingCategory == null)
                 return NotFound("Método de pagamento não encontrada.");
 
             existingCategory.PaymentMethodl = paymentMethodDTO.PaymentMethodl;
 
-            oPaymentMethodService.UpdatePaymentMethod(existingCategory);
+            oPaymentMethodService.Update(existingCategory);
 
             return Ok(paymentMethodDTO);
         }
@@ -64,7 +64,7 @@ namespace FinancialControle.API.Controllers
         [HttpDelete("{id}")]
         public ActionResult DeletePaymentMethod(int id)
         {
-            oPaymentMethodService.DeletePaymentMethod(id);
+            oPaymentMethodService.Delete(id);
             return Ok();
         }
     }

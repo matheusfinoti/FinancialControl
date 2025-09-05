@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FinancialControl.DATA.Interfaces
 {
-    internal interface IRepositoryVwTransactionDetail : IRepositoryModel<VwTransactionDetail>
+    internal interface IRepositoryVwTransactionDetail : IRepositoryModel<VwTransactionDetails>
     {
     }
 }

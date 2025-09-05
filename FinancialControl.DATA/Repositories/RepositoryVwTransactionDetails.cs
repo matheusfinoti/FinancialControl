@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace FinancialControl.DATA.Repositories
 {
-    internal class RepositoryVwTransactionDetail : RepositoryBase<VwTransactionDetail>, IRepositoryVwTransactionDetail
+    public class RepositoryVwTransactionDetails : RepositoryBase<VwTransactionDetails>, IRepositoryVwTransactionDetail
     {
-        public RepositoryVwTransactionDetail(FinancialControlContext context) : base(context)
+        public RepositoryVwTransactionDetails(FinancialControlContext context) : base(context)
         {
             
         }

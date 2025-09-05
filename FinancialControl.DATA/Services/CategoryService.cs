@@ -20,29 +20,10 @@ namespace FinancialControl.DATA.Services
             oRepositoryCategory = repositoryCategory;
         }
 
-        public List<Category> GetCategories() 
-        {
-            return oRepositoryCategory.SelecionarTodos();
-        }
-
-        public Category GetCategory(int id) 
-        { 
-            return oRepositoryCategory.SelecionarPk(id);
-        }
-
-        public void CreateCategory(Category category)
-        {
-            oRepositoryCategory.Incluir(category);
-        }
-
-        public void UpdateCategory(Category category)
-        {
-            oRepositoryCategory.Alterar(category);
-        }
-
-        public void DeleteCategory(int id) 
-        {
-            oRepositoryCategory.Excluir(id);
-        }
+        public List<Category> GetAll() => oRepositoryCategory.SelecionarTodos();
+        public Category Get(int id) => oRepositoryCategory.SelecionarPk(id);
+        public void Add(Category category) => oRepositoryCategory.Incluir(category);
+        public void Update(Category category) => oRepositoryCategory.Alterar(category);
+        public void Delete(int id) => oRepositoryCategory.Excluir(id);
     }
 }

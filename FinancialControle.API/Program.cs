@@ -20,9 +20,10 @@ builder.Services.AddDbContext<FinancialControlContext>(options =>
 
 builder.Services.AddScoped<RepositoryCategory>();
 builder.Services.AddScoped<CategoryService>();
-builder.Services.AddScoped<PaymentMethodService>();
 builder.Services.AddScoped<RepositoryPaymentMethod>();
-
+builder.Services.AddScoped<PaymentMethodService>();
+builder.Services.AddScoped<RepositoryVwTransactionDetails>();
+builder.Services.AddScoped<VwTransactionDetailsService>();
 
 builder.Services.AddControllers();
 //builder.Services.AddEndpointsApiExplorer();

@@ -25,21 +25,21 @@ namespace FinancialControle.API.Controllers
                 CategoryName = categoryDTO.CategoryName
             };
             
-            oCategoryService.CreateCategory(category);
+            oCategoryService.Add(category);
             return Ok();
         }
 
         [HttpGet]
         public ActionResult<IEnumerable<Category>> GetCategories()
         {
-            List<Category> listCategory = oCategoryService.GetCategories();
+            List<Category> listCategory = oCategoryService.GetAll();
             return Ok(listCategory);
         }
 
         [HttpGet("{id}")]
         public ActionResult<Category> GetCategory(int id)
         {
-            Category category = oCategoryService.GetCategory(id);
+            Category category = oCategoryService.Get(id);
             return Ok(category);
         }
 
@@ -49,14 +49,14 @@ namespace FinancialControle.API.Controllers
             if (id != categoryDto.Id)
                 return BadRequest("O ID da URL e do corpo da requisição não correspondem.");
 
-            var existingCategory = oCategoryService.GetCategory(id);
+            var existingCategory = oCategoryService.Get(id);
 
             if (existingCategory == null)
                 return NotFound("Categoria não encontrada.");
 
             existingCategory.CategoryName = categoryDto.CategoryName;
 
-            oCategoryService.UpdateCategory(existingCategory);
+            oCategoryService.Update(existingCategory);
 
             return Ok(categoryDto);
         }
@@ -64,7 +64,7 @@ namespace FinancialControle.API.Controllers
         [HttpDelete("{id}")]
         public ActionResult DeleteCategory(int id)
         {
-            oCategoryService.DeleteCategory(id);
+            oCategoryService.Delete(id);
             return Ok();
         }
     }

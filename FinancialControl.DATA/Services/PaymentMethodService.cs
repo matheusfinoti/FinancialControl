@@ -18,29 +18,10 @@ namespace FinancialControl.DATA.Services
             oRepositoryPaymentMethod = repositoryPaymentMethod;
         }
 
-        public List<PaymentMethod> GetPaymentMethods()
-        {
-            return oRepositoryPaymentMethod.SelecionarTodos();
-        }
-
-        public PaymentMethod GetPaymentMethod(int id)
-        {
-            return oRepositoryPaymentMethod.SelecionarPk(id);
-        }
-
-        public void CreatePaymentMethod(PaymentMethod paymentMethod)
-        {
-            oRepositoryPaymentMethod.Incluir(paymentMethod);
-        }
-
-        public void UpdatePaymentMethod(PaymentMethod paymentMethod)
-        {
-            oRepositoryPaymentMethod.Alterar(paymentMethod);
-        }
-
-        public void DeletePaymentMethod(int id)
-        {
-            oRepositoryPaymentMethod.Excluir(id);
-        }
+        public List<PaymentMethod> GetAll() => oRepositoryPaymentMethod.SelecionarTodos();
+        public PaymentMethod Get(int id) => oRepositoryPaymentMethod.SelecionarPk(id);
+        public void Create(PaymentMethod paymentMethod) => oRepositoryPaymentMethod.Incluir(paymentMethod);
+        public void Update(PaymentMethod paymentMethod) => oRepositoryPaymentMethod.Alterar(paymentMethod);
+        public void Delete(int id) => oRepositoryPaymentMethod.Excluir(id);
     }
 }

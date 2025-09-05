@@ -19,7 +19,7 @@ public partial class FinancialControlContext : DbContext
 
     public virtual DbSet<Transaction> Transactions { get; set; }
 
-    public virtual DbSet<VwTransactionDetail> VwTransactionDetails { get; set; }
+    public virtual DbSet<VwTransactionDetails> VwTransactionDetails { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -34,7 +34,7 @@ public partial class FinancialControlContext : DbContext
                 .HasConstraintName("FK_Transaction_PaymentMethod");
         });
 
-        modelBuilder.Entity<VwTransactionDetail>(entity =>
+        modelBuilder.Entity<VwTransactionDetails>(entity =>
         {
             entity.ToView("VwTransactionDetails");
         });

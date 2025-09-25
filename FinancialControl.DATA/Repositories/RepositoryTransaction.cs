@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FinancialControl.DATA.Repositories
 {
-    internal class RepositoryTransaction : RepositoryBase<Transaction>, IRepositoryTransaction
+    public class RepositoryTransaction : RepositoryBase<Transaction>, IRepositoryTransaction
     {
         public RepositoryTransaction(FinancialControlContext context) :base(context)
         {

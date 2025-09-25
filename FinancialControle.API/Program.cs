@@ -24,6 +24,8 @@ builder.Services.AddScoped<RepositoryPaymentMethod>();
 builder.Services.AddScoped<PaymentMethodService>();
 builder.Services.AddScoped<RepositoryVwTransactionDetails>();
 builder.Services.AddScoped<VwTransactionDetailsService>();
+builder.Services.AddScoped<RepositoryTransaction>();
+builder.Services.AddScoped<TransactionService>();
 
 builder.Services.AddControllers();
 //builder.Services.AddEndpointsApiExplorer();

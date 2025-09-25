@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace FinancialControl.DATA.Services
 {
-    internal class TransactionService
+    public class TransactionService
     {
-        protected readonly RepositoryTransaction oRepositoryTransaction;
+        private readonly RepositoryTransaction oRepositoryTransaction;
 
         public TransactionService(RepositoryTransaction repositoryTransaction)
         {
